@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1684405694 "/Users/espeer/Desktop/bsb/paper/report.tex" "report.pdf" "report" 1684405695
-  "/Users/espeer/Desktop/bsb/paper/report.tex" 1684405694 22063 b2c282a162649f9ca67abc506db56146 ""
+["pdflatex"] 1684431866 "/Users/espeer/Desktop/bsb/paper/report.tex" "report.pdf" "report" 1684431867
+  "/Users/espeer/Desktop/bsb/paper/report.tex" 1684431866 23347 a753cbc1b323e5c2440bf3e86a892e3d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -87,6 +87,8 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1672857705 2826441 d66aafb38daa2354e230becabf65ce33 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
+  "figs/cls_ff_spin.png" 1684431379 17640 9ae79e4dec2a541ee98ef7bb7b9d5872 ""
+  "figs/cls_ff_vel.png" 1684431338 16381 d59f40dc01ba4aee41c754db9ffa2dd7 ""
   "figs/cls_iner.png" 1684402033 31631 bcbd683c809ff4fe66c4117b10f86bdf ""
   "figs/pct0_8.png" 1684403801 11547 df1772853fa61b364cccf38279e78f40 ""
   "figs/pct1_8.png" 1684403801 11113 02291115813b989b8f67ce9247003b39 ""
@@ -96,9 +98,9 @@
   "figs/pct5_8.png" 1684403802 14826 f53ede74e642a463dff025dbb410c71a ""
   "figs/pct6_8.png" 1684403802 11385 3764497abb7b508f41d65c662e875c00 ""
   "figs/pct7_8.png" 1684403802 14222 b4336dd074d6f29ad4e67ff16f04caff ""
-  "report.aux" 1684405695 687 e9a381ac5e9089a426e01d40aae92395 "pdflatex"
+  "report.aux" 1684431867 687 7b3c6030be184a158bbe0675355b92d0 "pdflatex"
   "report.out" 0 -1 0 "pdflatex"
-  "report.tex" 1684405694 22063 b2c282a162649f9ca67abc506db56146 ""
+  "report.tex" 1684431866 23347 a753cbc1b323e5c2440bf3e86a892e3d ""
   (generated)
   "report.aux"
   "report.log"

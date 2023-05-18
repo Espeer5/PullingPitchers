@@ -226,30 +226,33 @@ and movement (for full data see appendix I). The pitches thrown in 2021 include 
 following pitch types: 
 
 \begin{center}
-    \begin{tabular}{||c | l||} 
+    \begin{tabular}{||c | c | l||} 
      \hline
-     Pitch & Description  \\ [0.5ex] 
+     Pitch & Data Label & Description  \\ [0.5ex] 
      \hline
-     4-Seamer & A fast, straight fastball with close to vertical backspin \\
+     4-Seamer & ff & A fast, straight fastball with close to vertical backspin \\
      \hline
-     Sinker & A fastball that drops vertically over the course of its flight \\
+     Sinker & si & A fastball that drops vertically over the course of its flight \\
      \hline
-     Cutter & A fastball which curves horizontally toward the glove side of the pitcher \\
+     Cutter & fc & A fastball which curves horizontally toward the glove side of the\\
+     && pitcher\\
      \hline
-     Slider & A "breaking ball" (pitch with an arcing path) which moves mostly 
-     \\ & horizontally toward the pitcher's glove side\\
+     Slider & sl & A "breaking ball" (pitch with an arcing path) which moves mostly 
+     \\ && horizontally toward the pitcher's glove side\\
      \hline
-     Changeup & A slower pitch whose flight is straight with some dropping vertical movement \\ 
+     Changeup & ch & A slower pitch whose flight is straight with some dropping vertical\\ 
+     && Movement.\\
      \hline 
-     Curve & A breaking ball whose movement is primarily vertical, dropping sharply \\
-     & over the course of its flight \\
+     Curve & cu & A breaking ball whose movement is primarily vertical, dropping\\
+     && sharply over the course of its flight \\
      \hline 
-     Splitter & A slower pitch with lower spin rate that drops as it approaches home plate \\
+     Splitter & fs & A slower pitch with lower spin rate that drops as it approaches home \\
+     && plate.\\
      \hline
-     Sweeper & A breaking ball which breaks exactly horizontal in its flight path \\
+     Sweeper & st & A breaking ball which breaks exactly horizontal in its flight path \\
      \hline 
-     Slurve & A breaking ball which breaks at a 45 degree angle between horizontal and 
-     \\ & vertical movement \\
+     Slurve & sv & A breaking ball which breaks at a 45 degree angle between horizontal 
+     \\ && and vertical movement \\
      \hline
     \end{tabular}
     \newline \\ Table 2: Pitch Types
@@ -287,7 +290,7 @@ blank bars indicating that the cluster of pitchers does not throw that pitch.
 \end{center}
 
 \indent A clear characterization of each cluster can be observed from these plots of 
-pitch usage:
+pitch usage: 
 
 \begin{center}
     \begin{tabular}{||c | l||} 
@@ -327,9 +330,30 @@ pitch usage:
     \newline \\ Table 3: Cluster Characteristics
 \end{center}
 
+\indent The characteristic arsenals as well as the reasons for why each cluster throws the way it does can also be seen from 
+the plots of average metrics across each cluster. For example, it is clear why clusters 
+2 and 7 throws the the most fastballs, with cluster 2 throwing 2 seams and custer 7 throwing 
+4 seams, as these clusters very clearly throw the fastest and highest spin rate fastballs 
+across all clusters of pitchers:
+
+\includegraphics[scale = .5]{figs/cls_ff_vel.png}
+\includegraphics[scale = .5]{figs/cls_ff_spin.png}
+\begin{center}Figs 10, 11: Cluster Fastball Characteristics\end{center}
+
+Note that cluster 5 also throws very high spin fastballs, which 
+is to be expected since a cutter is a fastball with a high horizontal spin rate. Clearly this 
+clustering makes a lot of sense; it has sorted pitchers by the metrics of their pitches, and 
+they throw those pitches with the best metrics the most frequently. Now, this clustering with 
+these pitcher archetypes can next be used to determine which fatigue characteristics impact 
+pitcher effectiveness for each classification. \\
+
+TODO: Complete and include regression analysis on fatigue characteristics \\
+
 \textbf{V. Results} \\
+TODO
 
 \textbf{VI. Discussion and Conclusion} \\
+TODO
 
 \pagebreak
 \textbf{VII. References} \\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.4)  18 MAY 2023 03:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.4)  18 MAY 2023 10:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -352,12 +352,12 @@ Overfull \hbox (25.72072pt too wide) in paragraph at lines 208--221
  []
 
 
-Overfull \hbox (7.67368pt too wide) in paragraph at lines 229--255
+Overfull \hbox (37.35963pt too wide) in paragraph at lines 229--258
  []  
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 258--271
+Underfull \hbox (badness 10000) in paragraph at lines 261--274
 
  []
 
@@ -365,96 +365,112 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--271
 <figs/cls_iner.png, id=45, 462.528pt x 346.896pt>
 File: figs/cls_iner.png Graphic file (type png)
 <use figs/cls_iner.png>
-Package pdftex.def Info: figs/cls_iner.png  used on input line 272.
+Package pdftex.def Info: figs/cls_iner.png  used on input line 275.
 (pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
 
-Overfull \hbox (10.39665pt too wide) in paragraph at lines 272--273
+Overfull \hbox (10.39665pt too wide) in paragraph at lines 275--276
 [][] 
  []
 
-<figs/pct0_8.png, id=47, 462.528pt x 346.896pt>
+[10 <./figs/cls_iner.png>]
+<figs/pct0_8.png, id=52, 462.528pt x 346.896pt>
 File: figs/pct0_8.png Graphic file (type png)
 <use figs/pct0_8.png>
-Package pdftex.def Info: figs/pct0_8.png  used on input line 282.
+Package pdftex.def Info: figs/pct0_8.png  used on input line 285.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct1_8.png, id=48, 462.528pt x 346.896pt>
+<figs/pct1_8.png, id=53, 462.528pt x 346.896pt>
 File: figs/pct1_8.png Graphic file (type png)
 <use figs/pct1_8.png>
-Package pdftex.def Info: figs/pct1_8.png  used on input line 282.
+Package pdftex.def Info: figs/pct1_8.png  used on input line 285.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-[10 <./figs/cls_iner.png>]
 <figs/pct2_8.png, id=54, 462.528pt x 346.896pt>
 File: figs/pct2_8.png Graphic file (type png)
 <use figs/pct2_8.png>
-Package pdftex.def Info: figs/pct2_8.png  used on input line 283.
+Package pdftex.def Info: figs/pct2_8.png  used on input line 286.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
 <figs/pct3_8.png, id=55, 462.528pt x 346.896pt>
 File: figs/pct3_8.png Graphic file (type png)
 <use figs/pct3_8.png>
-Package pdftex.def Info: figs/pct3_8.png  used on input line 283.
+Package pdftex.def Info: figs/pct3_8.png  used on input line 286.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
 <figs/pct4_8.png, id=56, 462.528pt x 346.896pt>
 File: figs/pct4_8.png Graphic file (type png)
 <use figs/pct4_8.png>
-Package pdftex.def Info: figs/pct4_8.png  used on input line 284.
+Package pdftex.def Info: figs/pct4_8.png  used on input line 287.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
 <figs/pct5_8.png, id=57, 462.528pt x 346.896pt>
 File: figs/pct5_8.png Graphic file (type png)
 <use figs/pct5_8.png>
-Package pdftex.def Info: figs/pct5_8.png  used on input line 284.
+Package pdftex.def Info: figs/pct5_8.png  used on input line 287.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
 <figs/pct6_8.png, id=58, 462.528pt x 346.896pt>
 File: figs/pct6_8.png Graphic file (type png)
 <use figs/pct6_8.png>
-Package pdftex.def Info: figs/pct6_8.png  used on input line 285.
+Package pdftex.def Info: figs/pct6_8.png  used on input line 288.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
 <figs/pct7_8.png, id=59, 462.528pt x 346.896pt>
 File: figs/pct7_8.png Graphic file (type png)
 <use figs/pct7_8.png>
-Package pdftex.def Info: figs/pct7_8.png  used on input line 285.
+Package pdftex.def Info: figs/pct7_8.png  used on input line 288.
 (pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
- [11 <./figs/pct0_8.png> <./figs/pct1_8.png> <./figs/pct2_8.png> <./figs/pct3_8.png> <./figs/pct4_8.png> <./figs/pct5_8.png> <./figs/pct6_8.png> <./figs/pct7_8.png>]
-Overfull \hbox (12.44307pt too wide) in paragraph at lines 293--327
+ [11 <./figs/pct0_8.png> <./figs/pct1_8.png> <./figs/pct2_8.png> <./figs/pct3_8.png> <./figs/pct4_8.png> <./figs/pct5_8.png>]
+Overfull \hbox (12.44307pt too wide) in paragraph at lines 296--330
  []  
  []
 
+[12 <./figs/pct6_8.png> <./figs/pct7_8.png>] [13]
+<figs/cls_ff_vel.png, id=81, 462.528pt x 346.896pt>
+File: figs/cls_ff_vel.png Graphic file (type png)
+<use figs/cls_ff_vel.png>
+Package pdftex.def Info: figs/cls_ff_vel.png  used on input line 339.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<figs/cls_ff_spin.png, id=82, 462.528pt x 346.896pt>
+File: figs/cls_ff_spin.png Graphic file (type png)
+<use figs/cls_ff_spin.png>
+Package pdftex.def Info: figs/cls_ff_spin.png  used on input line 340.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+Overfull \hbox (13.00774pt too wide) in paragraph at lines 339--341
+[][] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--349
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 335--351
+[14 <./figs/cls_ff_vel.png> <./figs/cls_ff_spin.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 359--375
 
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 378--381
 
  []
 
-[15] (./report.aux)
+[16] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9971 strings out of 478268
- 153193 string characters out of 5846348
- 449809 words of memory out of 5000000
- 28024 multiletter control sequences out of 15000+600000
+ 9986 strings out of 478268
+ 153525 string characters out of 5846348
+ 450809 words of memory out of 5000000
+ 28036 multiletter control sequences out of 15000+600000
  475026 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,253b,394s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (15 pages, 198678 bytes).
+Output written on report.pdf (16 pages, 227305 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

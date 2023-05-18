@@ -631,6 +631,16 @@ INPUT ./figs/pct7_8.png
 INPUT figs/pct7_8.png
 INPUT ./figs/pct7_8.png
 INPUT ./figs/pct7_8.png
+INPUT ./figs/cls_ff_vel.png
+INPUT ./figs/cls_ff_vel.png
+INPUT figs/cls_ff_vel.png
+INPUT ./figs/cls_ff_vel.png
+INPUT ./figs/cls_ff_vel.png
+INPUT ./figs/cls_ff_spin.png
+INPUT ./figs/cls_ff_spin.png
+INPUT figs/cls_ff_spin.png
+INPUT ./figs/cls_ff_spin.png
+INPUT ./figs/cls_ff_spin.png
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT report.aux
