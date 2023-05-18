@@ -69,7 +69,7 @@ the decisions of a baseball manager underrth largest scrutiny. The game importan
 visibility of these decisions make it important to develop metric based methods which 
 optimize their result. 
 \\ \indent Baseball pitchers are highly varied athletes. The MLB recognizes 13 
-different types of pitches [!], with each pitcher in the league throwing a
+different types of pitches, with each pitcher in the league throwing a
 different combination of pitches (called their pitch arsenal), each of which has 
 unique characteristics when thrown by one arm over another. This incredible variety 
 in pitchers makes it difficult to generalize any conclusions from sabermetrics 
@@ -89,32 +89,32 @@ even with decreased access to advanced game data. \\
 
 \textbf{II. Review of Literature} \\ \\ 
 \indent Research into pitcher removal from a game has been somewhat sparse, and has 
-focused mainly on how managers currently mak decisions as opposed to how optimal 
+focused mainly on how managers currently make decisions as opposed to how optimal 
 decision making could be performed. These studies have attempted to determine or measure 
 managers act as they do, and if their decision making is optimal, and have revealed the
 need for this study by showing sub-optimal behavior in this decision making. Phillips' 2017 
 study showed that managers emphasize pitch count disproportionately when removing pitchers, 
 showing a strong tendency to remove pitchers on pitch counts which are multiples of 
-10 regardless of the game state, with no clear statistical reason for this behavior. 
+10 regardless of the game state, with no clear statistical reason for this behavior [1]. 
 Clearly this shows managerial behavior which is subjective and not driven by sabermetrics. 
 \\ \indent Grantham et al. looked at college pitchers, and showed that pitcher fatigue 
 significantly impacted pitching mechanics over the course of a game, with pitchers showing 
-clear biophysical indicators of fatigue with increased number of pitches or innings thrown. 
+clear biophysical indicators of fatigue with increased number of pitches or innings thrown[2]. 
 For the purposes of this paper, we hypothesize that these biophysical differences in pitching mechanics
 will result in observable changes in the metrics surrounding ball flight. For example, Grantham found that external rotation 
 was strongly impacted by pitcher fatigue. A decrease in external rotation likely results in 
 decreased pitch velocity, which is observable from the sabermetrics used in this paper.
-\\ \indent Whiteside et al. 2015 found that the variables which changed the most 
+\\ \indent Whiteside et al. 2016 found that the variables which changed the most 
 over the course of a pitchers performance as the pitcher fatigued were pitch 
 velocity, vertical movement, and proportion of offspeed pitches thrown by the pitcher. However, 
-these variables were not strongly correlated with effectiveness. This paper seeks to find markers 
+these variables were not strongly correlated with effectiveness [3]. This paper seeks to find markers 
 hidden in these and other pitching metrics which both change as a pitcher fatigues and 
 have a stronger correlation with effectiveness than those found by Whiteside.
 \\ \indent Woodham et al. 2019 used a machine learning model to identify the most 
 significant features in when a starting pitcher would be removed from a game in an effort 
 to predict when a starting pitcher should be removed, and found that the strike count 
 and number of batters a pitcher has faced in the game, in conjunction with the number of outs, 
-inning number, and number of homeruns allowed are the most significant factors in removing a pitcher. 
+inning number, and number of homeruns allowed are the most significant factors in removing a pitcher [4]. 
 However, these conclusions yield sparse information in how to make decisions about removing a pitcher, 
 as they are very standard metrics of performance, and if a pitcher is performing poorly 
 (throwing balls and giving up homeruns), then it is evident they must be removed 
@@ -222,7 +222,110 @@ statistics are scraped for all pitchers who threw a minimum of 1000 pitches in 2
 \end{center}
 \indent Each of these metrics are scraped for each type of pitch thrown by each pitcher, 
 providing a characterization for each pitcher of what pitches they throw, with what speed 
-and movement (for full data see appendix I). \\
+and movement (for full data see appendix I). The pitches thrown in 2021 include the 
+following pitch types: 
+
+\begin{center}
+    \begin{tabular}{||c | l||} 
+     \hline
+     Pitch & Description  \\ [0.5ex] 
+     \hline
+     4-Seamer & A fast, straight fastball with close to vertical backspin \\
+     \hline
+     Sinker & A fastball that drops vertically over the course of its flight \\
+     \hline
+     Cutter & A fastball which curves horizontally toward the glove side of the pitcher \\
+     \hline
+     Slider & A "breaking ball" (pitch with an arcing path) which moves mostly 
+     \\ & horizontally toward the pitcher's glove side\\
+     \hline
+     Changeup & A slower pitch whose flight is straight with some dropping vertical movement \\ 
+     \hline 
+     Curve & A breaking ball whose movement is primarily vertical, dropping sharply \\
+     & over the course of its flight \\
+     \hline 
+     Splitter & A slower pitch with lower spin rate that drops as it approaches home plate \\
+     \hline
+     Sweeper & A breaking ball which breaks exactly horizontal in its flight path \\
+     \hline 
+     Slurve & A breaking ball which breaks at a 45 degree angle between horizontal and 
+     \\ & vertical movement \\
+     \hline
+    \end{tabular}
+    \newline \\ Table 2: Pitch Types
+\end{center}
+
+\indent K-means clustering is used to identify clusters of pitchers representing 
+distinct pitching styles based on the arsenals thrown by each pitcher. The input 
+vectors are the sets of arsenal data for each pitcher, pre-processed by applying mean normalization and 
+dividing by the standard deviation of each feature across the entire population. For those 
+features which are not populated (i.e a pitcher who does not throw a certain pitch), the absence of the 
+feature is actually a key feature of the dataset, as they pitcher not throwing that pitch certainly says something about their strategy.
+Therefore in order to capture this information in the data, we assume that features are approximately normally distributed 
+across pitchers, and define empty features as a significant deviation from the mean, initializing all values of the
+mean normalized empty feature to 4 standard deviations from the mean.
+ \\ \indent In order to identify the number of clusters which should be distinguished by k-means, the 
+elbow method is used in which clusterings of different sizes are applied until 
+an approximate convergence of clustering inertia, defined as the reduction of mean distance from the centroid of each cluster, 
+is reached, shown for the pitching arsenal data in the following plot:\\
+
+\includegraphics{figs/cls_iner.png}
+\begin{center}Figure 1: K-means Clustering Elbow Method\end{center}
+
+\indent In order to minimize clustering inertia while maximizing the amount of information conveyed through 
+clustering, a clustering size of 8 is selected and pitchers are sorted accoring to this 
+clustering. The results of the clustering are 8 groups of pitchers with distinct 
+styles of pitching, characterized best by the frequency with which they throw different pitches. 
+These frequencies are shown in the plots below in standard deviations from the average pitch usage, with any 
+blank bars indicating that the cluster of pitchers does not throw that pitch.
+\begin{center}
+ \includegraphics[scale=.425]{figs/pct0_8.png} \includegraphics[scale=.425]{figs/pct1_8.png}
+\\ \includegraphics[scale=.425]{figs/pct2_8.png} \includegraphics[scale=.425]{figs/pct3_8.png}
+\\ \includegraphics[scale=.425]{figs/pct4_8.png} \includegraphics[scale=.425]{figs/pct5_8.png}
+\\ \includegraphics[scale=.425]{figs/pct6_8.png} \includegraphics[scale=.425]{figs/pct7_8.png}
+\\ Figures 2-9: Cluster Pitch Usages
+\end{center}
+
+\indent A clear characterization of each cluster can be observed from these plots of 
+pitch usage:
+
+\begin{center}
+    \begin{tabular}{||c | l||} 
+     \hline
+     Cluster & Description  \\ [0.5ex] 
+     \hline
+     0 & Changeup heavy pitchers. These pitchers throw a combination of fastball and\\
+     & changeup, heavily favoring the changeup as their best pitch, and using their\\
+     & fastball as a change in speed to increase the effectiveness of their changeup.\\
+     \hline 
+     1 & Power fastball pitchers. These pitchers throw far more fastballs than the rest\\
+     & of the league, using their fastball in combination with occassional breaking balls\\
+     & to get outs.\\
+     \hline
+     2 & 2-seam pitchers. These pitchers put a lot of movement on their fastballs, both\\
+     & cutting them and sinking them, without and blending them with the occassional\\ 
+     & straight fastball and changeup, but without relying too heavily on any one pitch.\\
+     \hline 
+     3 & Sinker ball pitchers. Rely heavily on the sinker to get outs, and mix it with\\
+     & the occassional slider.\\
+     \hline 
+     4 & Nothing straight. These pitchers throw far less straight fastballs than other\\ 
+     & clusters of pitchers, relying on moving fastballs mixed with changeups.\\
+     \hline
+     5 & Cutter ball pitchers. These pitchers throw very high amounts of cutters,\\
+     & mixing them with a power four seam to blow the ball past guys when they need\\
+     & a strikeout.\\
+     \hline 
+     6 & Slider heavy pitchers. These pitchers throw a power slider more frequently\\
+     & than any other group of pitchers, mixing it with occassional fastball when \\
+     & speed is needed.\\
+     \hline 
+     7 & Only fastballs. These pitchers throw mostly fastballs with the occassional\\ 
+     & slider, mostly looking to blow the ball past the hitter with velocity.\\
+     \hline
+    \end{tabular}
+    \newline \\ Table 3: Cluster Characteristics
+\end{center}
 
 \textbf{V. Results} \\
 
@@ -239,14 +342,17 @@ Managerial Decision-Making in Major League Baseball Pitcher Substitutions.
 of Collegiate Baseball Pitchers. \emph{The Orthopaedic Journal of Sports Medicine}
 2(6), 2014.
 \\
-\hypertarget{3}{[3]} Michael Woodham et al. When to Pull Starting Pitchers in Major League Baseball? A Data Mining Approach.
-\emph{Applied Data Science}, 2016
+\hypertarget{3}{[3]} David Whiteside et al. Variations in Pitching Performance During a 
+Major League Baseball Game: What Can We Learn From Ball Tracking Data? 
+\emph{International Conference of Biomechanics in Sports} 33, 2016
 \\
-\hypertarget{4}{[4]} 
+\hypertarget{4}{[4]} Michael Woodham et al. When to Pull Starting Pitchers in Major League Baseball? A Data Mining Approach.
+\emph{Applied Data Science}, 2016
+
 
 \pagebreak
 \textbf{Appendix I: Link to Data and Code} \\
 \\
-Full data and code may be found at: 
+Full data and code may be found at: \url{https://github.com/Espeer5/PullingPitchers}
 
 \end{document}
