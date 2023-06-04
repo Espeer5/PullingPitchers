@@ -147,6 +147,14 @@ def get_group(arsenals, kmeans, group, clusters):
     return dict[group]
 
 
+def get_group_ids(clusters, group):
+    kmeans = get_pickle(clusters)
+    arsenals = collect()
+    arsenals = normalize(arsenals)
+    clean_empt(arsenals)
+    return get_group(arsenals, kmeans, group, clusters)
+
+
 def to_pickle(kmeans, i):
     """ Saves the kmeans data structure specified to a pickle file to be
     accessed and analyzed in a later session
@@ -166,4 +174,3 @@ def get_pickle(i):
     with open(f'{PICKLEPATH}/cluster{i}.pickle', 'rb') as pick:
         toRet = pickle.load(pick)
     return toRet
-
