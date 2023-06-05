@@ -1,3 +1,13 @@
+"""This is the main module used for data analysis on the fatigue of MLB pitchers 
+and its indicators in time series across games. The tree is set up such that any 
+of the funcitons given in the submodules may be called here for the purposes of 
+data analysis.
+
+Author: Edward Speer
+Date: 6/5/23
+"""
+
+#Module imports
 import Clustering.cluster as cl
 import Regression.finder as fn
 import Regression.analyze as az
@@ -5,16 +15,6 @@ import pickle
 import Regression.vizu as v
 
 
+#Main executable - Write analysis script here
 if __name__ == "__main__":
-    with open("temp.pickle", 'rb') as pick:
-        events = pickle.load(pick)
-    for event in events:
-        print(event['inning'])
-    print(events[1])
-    print(events[1]['pitch_number'])
-    velos = az.fb_velo(events[1])
-    v.plot_game_series(velos.rolling(10).mean())
-    cvs = az.cv_spin(events[1])
-    v.plot_game_series(cvs.rolling(10).mean())
-    print(velos)
-    print(cvs)
+    v.plot_game_series(az.smooth_series(az.fb_velo(az.from_pick(group=1)[0])))

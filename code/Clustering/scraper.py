@@ -9,7 +9,7 @@ Date: 5/1/23
 
 import csv
 
-CSVPATH = "../../csvs"
+CSVPATH = "csvs"
 
 
 def collect():

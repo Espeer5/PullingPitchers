@@ -10,7 +10,7 @@ import pickle
 import statistics
 import copy
 
-PICKLEPATH = "../../pickles"
+PICKLEPATH = "pickles"
 
 
 def clean_empt(arsenals):
