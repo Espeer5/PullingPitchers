@@ -5,7 +5,7 @@ Author: Edward Speer
 Date: 5/9/23
 """
 
-from scraper import collect
+from Clustering.scraper import collect
 import pickle
 import statistics
 import copy
@@ -148,6 +148,12 @@ def get_group(arsenals, kmeans, group, clusters):
 
 
 def get_group_ids(clusters, group):
+    """ Get the player ID's of all players in a group from a clustering of
+    a given size
+
+    Arguments: clusters: the number of clusters in the clustering 
+               group: the group number to get from the clustering
+    """
     kmeans = get_pickle(clusters)
     arsenals = collect()
     arsenals = normalize(arsenals)
