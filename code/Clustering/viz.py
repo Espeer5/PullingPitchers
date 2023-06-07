@@ -25,7 +25,8 @@ def cluster_percG(group, n):
     arsenals = normalize(arsenals)
     clean_empt(arsenals)
     cluster = get_group(arsenals, kmeans, group, n)
-    keys = ['n_ff', 'n_si', 'n_fc', 'n_sl', 'n_ch', 'n_cu', 'n_fs', 'n_kn', 'n_st', 'n_sv']
+    keys = ['n_ff', 'n_si', 'n_fc', 'n_sl', 'n_ch', 'n_cu', 'n_fs', 'n_kn', 
+            'n_st', 'n_sv']
     pct = [0 for key in keys]
     i=0
     for player in cluster:

@@ -16,12 +16,12 @@ import pickle
 THRESHOLD = .1
 
 
-def get_pitcher(pitcher):
+def get_pitcher(pitcher, start='2021-04-01', end='2021-10-03'):
     """ Retrieves all pitches thrown in the 2021 season by the specified pitcher
 
     Arguments: pitcher - the playerID of the pitcher to retrieve data for
     """
-    return pb.statcast_pitcher('2021-04-01', '2021-10-03', pitcher)
+    return pb.statcast_pitcher(start_dt=start, end_dt=end, player_id=pitcher)
 
 
 def find_events(cl_num, group):
