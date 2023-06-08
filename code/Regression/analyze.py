@@ -58,7 +58,8 @@ def game_stat_series(game, pitchTs, stat):
                pitchTs - A list of pitch types
                stat - the desired stat to get data for over the game 
     """
-    return smooth_series(game[game['pitch_type'].isin(pitchTs)].loc[:, stat])
+    return game[game['pitch_type'].isin(pitchTs)].loc[:, stat]
+    #return smooth_series(game[game['pitch_type'].isin(pitchTs)].loc[:, stat])
 
 
 def series_for_group(group_num, pitchTs, stat):

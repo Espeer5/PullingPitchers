@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.4)  18 MAY 2023 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.4)  7 JUN 2023 21:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -304,173 +304,215 @@ LaTeX Info: Redefining \nameref on input line 31.
  [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 49--50
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 51--89
-
- []
-
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 90--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--129
-
- []
-
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 130--189
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--189
-
- []
-
-[5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 190--207
-
- []
-
-[7]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 208.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 208.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Overfull \hbox (25.72072pt too wide) in paragraph at lines 208--221
- []  
+) [2]
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
+
  []
 
 
-Overfull \hbox (37.35963pt too wide) in paragraph at lines 229--258
- []  
+Underfull \hbox (badness 10000) in paragraph at lines 73--111
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 112--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--151
+
+ []
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 152--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--211
+
+ []
+
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
+
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 261--274
-
- []
-
-[9]
-<figs/cls_iner.png, id=45, 462.528pt x 346.896pt>
-File: figs/cls_iner.png Graphic file (type png)
-<use figs/cls_iner.png>
-Package pdftex.def Info: figs/cls_iner.png  used on input line 275.
-(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
-
-Overfull \hbox (10.39665pt too wide) in paragraph at lines 275--276
-[][] 
- []
-
-[10 <./figs/cls_iner.png>]
-<figs/pct0_8.png, id=52, 462.528pt x 346.896pt>
-File: figs/pct0_8.png Graphic file (type png)
-<use figs/pct0_8.png>
-Package pdftex.def Info: figs/pct0_8.png  used on input line 285.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct1_8.png, id=53, 462.528pt x 346.896pt>
-File: figs/pct1_8.png Graphic file (type png)
-<use figs/pct1_8.png>
-Package pdftex.def Info: figs/pct1_8.png  used on input line 285.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct2_8.png, id=54, 462.528pt x 346.896pt>
-File: figs/pct2_8.png Graphic file (type png)
-<use figs/pct2_8.png>
-Package pdftex.def Info: figs/pct2_8.png  used on input line 286.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct3_8.png, id=55, 462.528pt x 346.896pt>
-File: figs/pct3_8.png Graphic file (type png)
-<use figs/pct3_8.png>
-Package pdftex.def Info: figs/pct3_8.png  used on input line 286.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct4_8.png, id=56, 462.528pt x 346.896pt>
-File: figs/pct4_8.png Graphic file (type png)
-<use figs/pct4_8.png>
-Package pdftex.def Info: figs/pct4_8.png  used on input line 287.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct5_8.png, id=57, 462.528pt x 346.896pt>
-File: figs/pct5_8.png Graphic file (type png)
-<use figs/pct5_8.png>
-Package pdftex.def Info: figs/pct5_8.png  used on input line 287.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct6_8.png, id=58, 462.528pt x 346.896pt>
-File: figs/pct6_8.png Graphic file (type png)
-<use figs/pct6_8.png>
-Package pdftex.def Info: figs/pct6_8.png  used on input line 288.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
-<figs/pct7_8.png, id=59, 462.528pt x 346.896pt>
-File: figs/pct7_8.png Graphic file (type png)
-<use figs/pct7_8.png>
-Package pdftex.def Info: figs/pct7_8.png  used on input line 288.
-(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
- [11 <./figs/pct0_8.png> <./figs/pct1_8.png> <./figs/pct2_8.png> <./figs/pct3_8.png> <./figs/pct4_8.png> <./figs/pct5_8.png>]
-Overfull \hbox (12.44307pt too wide) in paragraph at lines 296--330
+Overfull \hbox (25.72072pt too wide) in paragraph at lines 232--245
  []  
  []
 
-[12 <./figs/pct6_8.png> <./figs/pct7_8.png>] [13]
-<figs/cls_ff_vel.png, id=81, 462.528pt x 346.896pt>
+
+Overfull \hbox (37.35963pt too wide) in paragraph at lines 253--282
+ []  
+ []
+
+[9] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 299--304
+
+ []
+
+<figs/cls_iner.png, id=53, 462.528pt x 346.896pt>
+File: figs/cls_iner.png Graphic file (type png)
+<use figs/cls_iner.png>
+Package pdftex.def Info: figs/cls_iner.png  used on input line 305.
+(pdftex.def)             Requested size: 462.52686pt x 346.89514pt.
+
+Overfull \hbox (10.39665pt too wide) in paragraph at lines 305--306
+[][] 
+ []
+
+[11]
+<figs/pct0_8.png, id=60, 462.528pt x 346.896pt>
+File: figs/pct0_8.png Graphic file (type png)
+<use figs/pct0_8.png>
+Package pdftex.def Info: figs/pct0_8.png  used on input line 315.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+<figs/pct1_8.png, id=61, 462.528pt x 346.896pt>
+File: figs/pct1_8.png Graphic file (type png)
+<use figs/pct1_8.png>
+Package pdftex.def Info: figs/pct1_8.png  used on input line 315.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+ [12 <./figs/cls_iner.png>]
+<figs/pct2_8.png, id=67, 462.528pt x 346.896pt>
+File: figs/pct2_8.png Graphic file (type png)
+<use figs/pct2_8.png>
+Package pdftex.def Info: figs/pct2_8.png  used on input line 316.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+<figs/pct3_8.png, id=68, 462.528pt x 346.896pt>
+File: figs/pct3_8.png Graphic file (type png)
+<use figs/pct3_8.png>
+Package pdftex.def Info: figs/pct3_8.png  used on input line 316.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+<figs/pct4_8.png, id=69, 462.528pt x 346.896pt>
+File: figs/pct4_8.png Graphic file (type png)
+<use figs/pct4_8.png>
+Package pdftex.def Info: figs/pct4_8.png  used on input line 317.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+<figs/pct5_8.png, id=70, 462.528pt x 346.896pt>
+File: figs/pct5_8.png Graphic file (type png)
+<use figs/pct5_8.png>
+Package pdftex.def Info: figs/pct5_8.png  used on input line 317.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+<figs/pct6_8.png, id=71, 462.528pt x 346.896pt>
+File: figs/pct6_8.png Graphic file (type png)
+<use figs/pct6_8.png>
+Package pdftex.def Info: figs/pct6_8.png  used on input line 318.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+<figs/pct7_8.png, id=72, 462.528pt x 346.896pt>
+File: figs/pct7_8.png Graphic file (type png)
+<use figs/pct7_8.png>
+Package pdftex.def Info: figs/pct7_8.png  used on input line 318.
+(pdftex.def)             Requested size: 196.57532pt x 147.43149pt.
+ [13 <./figs/pct0_8.png> <./figs/pct1_8.png> <./figs/pct2_8.png> <./figs/pct3_8.png> <./figs/pct4_8.png> <./figs/pct5_8.png> <./figs/pct6_8.png> <./figs/pct7_8.png>]
+Overfull \hbox (12.44307pt too wide) in paragraph at lines 326--360
+ []  
+ []
+
+[14]
+<figs/cls_ff_vel.png, id=90, 462.528pt x 346.896pt>
 File: figs/cls_ff_vel.png Graphic file (type png)
 <use figs/cls_ff_vel.png>
-Package pdftex.def Info: figs/cls_ff_vel.png  used on input line 339.
+Package pdftex.def Info: figs/cls_ff_vel.png  used on input line 369.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-<figs/cls_ff_spin.png, id=82, 462.528pt x 346.896pt>
+<figs/cls_ff_spin.png, id=91, 462.528pt x 346.896pt>
 File: figs/cls_ff_spin.png Graphic file (type png)
 <use figs/cls_ff_spin.png>
-Package pdftex.def Info: figs/cls_ff_spin.png  used on input line 340.
+Package pdftex.def Info: figs/cls_ff_spin.png  used on input line 370.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (13.00774pt too wide) in paragraph at lines 339--341
+Overfull \hbox (13.00774pt too wide) in paragraph at lines 369--371
 [][] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--349
+Underfull \hbox (badness 10000) in paragraph at lines 373--379
+
+ []
+
+[15 <./figs/cls_ff_vel.png> <./figs/cls_ff_spin.png>]
+Overfull \hbox (61.78424pt too wide) in paragraph at lines 401--428
+ []  
+ []
+
+[16] [17]
+<figs/unsmoothed.png, id=107, 462.528pt x 346.896pt>
+File: figs/unsmoothed.png Graphic file (type png)
+<use figs/unsmoothed.png>
+Package pdftex.def Info: figs/unsmoothed.png  used on input line 463.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+<figs/smoothed.png, id=108, 462.528pt x 346.896pt>
+File: figs/smoothed.png Graphic file (type png)
+<use figs/smoothed.png>
+Package pdftex.def Info: figs/smoothed.png  used on input line 464.
+(pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
+ [18] [19 <./figs/unsmoothed.png> <./figs/smoothed.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 491--495
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 350--351
+Overfull \hbox (21.20384pt too wide) in paragraph at lines 501--523
+ []  
+ []
+
+[20] [21]
+<figs/SpinDrf.png, id=130, 800.7516pt x 346.896pt>
+File: figs/SpinDrf.png Graphic file (type png)
+<use figs/SpinDrf.png>
+Package pdftex.def Info: figs/SpinDrf.png  used on input line 544.
+(pdftex.def)             Requested size: 560.52231pt x 242.82553pt.
+
+Overfull \hbox (90.76729pt too wide) in paragraph at lines 544--546
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 557--589
 
  []
 
-[14 <./figs/cls_ff_vel.png> <./figs/cls_ff_spin.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 359--375
+[22 <./figs/SpinDrf.png>] [23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 591--607
 
  []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 378--381
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 610--613
 
  []
 
-[16] (./report.aux)
+[26] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9986 strings out of 478268
- 153525 string characters out of 5846348
- 450809 words of memory out of 5000000
- 28036 multiletter control sequences out of 15000+600000
- 475026 words of font info for 50 fonts, out of 8000000 for 9000
+ 10020 strings out of 478268
+ 154073 string characters out of 5846348
+ 454809 words of memory out of 5000000
+ 28056 multiletter control sequences out of 15000+600000
+ 475363 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,253b,394s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (16 pages, 227305 bytes).
+ 60i,7n,63p,253b,394s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on report.pdf (26 pages, 390373 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

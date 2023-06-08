@@ -37,12 +37,34 @@
     \Large When to Pull a Pitcher? Predicting Drops in Pitcher Effectiveness in 
     Major League Baseball \color{black}
 \end{center}
-\vspace*{\fill}
-\begin{center} \normalsize Edward Speer\\ \end{center}
-\begin{center} \normalsize BEM/Ec 120: Sports Science\\ \end{center}
+\begin{center} \normalsize Edward Speer, BEM/Ec 120: Sports Science, Spring '23\\ \end{center}
 \begin{center} \normalsize Dr. R. Micheal Alvarez and Dr. Oliver Eslinger\\ \end{center}
-\begin{center} \normalsize May 17, 2023\\ \end{center}
+\vspace*{\fill}
+\begin{center}\textbf{Abstract}\end{center}
+The decision of when to substitute one pitcher for another in a major league baseball 
+game is one of the most important strategic choices in the game. This paper employs clustering and 
+explanatory analysis of time series data of pitches to determine important markers in statcast data 
+which can forecast a pitcher giving up an offensive advantage to the opposing team, finding that the 
+decline in spin rate of a pitcher's primary pitch is the most important factor, followed by the decline in spin rate of 
+their secondary pitch. Interestingly pitch velocity decline was found to play little to no role. 
+This work can inform baseball strategic decision making regarding pitcher usage 
+based on in-game statcast data.
 
+\pagebreak
+\begin{center}
+    \underline{\textbf{Table of Contents}} \\ \hfill \break
+    \textbf{1}: Introduction .......................................... 3 \\
+    \textbf{2}: Review of Literature .............................. 4 \\
+    \textbf{3}: Theory and Hypothesis .......................... 6 \\
+    \textbf{4}: Data and Methods ................................. 8 \\
+    \textbf{4.1}: Data Source ........................................ 8 \\
+    \textbf{4.2}: Data Clustering ................................. 10 \\
+    \textbf{4.3}: Fatigue Analysis ................................ 15 \\
+    \textbf{5}: Results ................................................. 20 \\
+    \textbf{6}: Discussion and Conclusion ................... 23 \\ 
+    \textbf{7}: References ............................................ 25 \\
+    \textbf{8}: Appendix I .......................................... 26 \\
+\end{center}
 
 \pagebreak
 
@@ -188,6 +210,8 @@ in effectiveness will be some combination of features of primary and secondary p
 is typically the combination of multiple pitches which make an arsenal effective. \\
 
 \textbf{IV. Data and Methods} \\ \\
+
+\textbf{Data Source} \\
 \indent In order to select data to use for this study, it was important to consider 
 several confounding factors which could alter the consistency of pitching data. 
 Firstly, pitcher tendencies change from year to year, with pitchers adding or removing 
@@ -258,15 +282,21 @@ following pitch types:
     \newline \\ Table 2: Pitch Types
 \end{center}
 
+\textbf{Data Clustering}
+
 \indent K-means clustering is used to identify clusters of pitchers representing 
 distinct pitching styles based on the arsenals thrown by each pitcher. The input 
-vectors are the sets of arsenal data for each pitcher, pre-processed by applying mean normalization and 
-dividing by the standard deviation of each feature across the entire population. For those 
+vectors are the sets of arsenal data for each pitcher, pre-processed by applying mean normalization 
+of each feature $f_m$ across the entire population for each arsenal metric $m_a$: \[f_m = (\mu_{m_a} - m_a)/ \sigma_{m_a} \;\;\; (1)\] For those 
 features which are not populated (i.e a pitcher who does not throw a certain pitch), the absence of the 
 feature is actually a key feature of the dataset, as they pitcher not throwing that pitch certainly says something about their strategy.
 Therefore in order to capture this information in the data, we assume that features are approximately normally distributed 
 across pitchers, and define empty features as a significant deviation from the mean, initializing all values of the
-mean normalized empty feature to 4 standard deviations from the mean.
+mean normalized empty feature to 4 standard deviations from the mean:
+\[f_m = \begin{cases}
+    (\mu_{m_a} - m_a)/ \sigma_{m_a} & $pitch in arsenal$ \\
+    (\mu_{m_a} - (4 * \sigma_{m_a} + \mu_{m_a}))/ \sigma_{m_a} & $pitch not in arsenal$
+\end{cases}\;\;\;\;(2)\]
  \\ \indent In order to identify the number of clusters which should be distinguished by k-means, the 
 elbow method is used in which clusterings of different sizes are applied until 
 an approximate convergence of clustering inertia, defined as the reduction of mean distance from the centroid of each cluster, 
@@ -347,13 +377,215 @@ they throw those pitches with the best metrics the most frequently. Now, this cl
 these pitcher archetypes can next be used to determine which fatigue characteristics impact 
 pitcher effectiveness for each classification. \\
 
-TODO: Complete and include regression analysis on fatigue characteristics \\
+
+\textbf{Fatigue Analysis} \\
+\indent Now, for each cluster identified by the clustering analysis, an explanatory analysis 
+is to be carried out to understand how fatigue experience by a pitcher throughout a 
+game can maifest itself in observable changes within the data. In order to begin this analysis, 
+we need to first identify and collect data for instances of "fatigue events" in which 
+a pitcher allowed the offensive team to gain an advantage. In order to do so, a fatigue event 
+is defined as an outing in which after a pitcher threw at least as many as half of their average number of pitches
+thrown per outing, the offensive team gained a large swing in expected winning percentage from a discrete event. A large swing in expected winning 
+percentage is defined as a delta of more than $.1$ over the course of the window. 
+\\ \indent For each cluster, the events matching this definition are queried using Pybaseball 
+and the event identification stored via python's inbuilt data pickling module (See full event listings 
+by unlpickling the events file from the link provided in Appendix I). Events are scraped from 
+querying all pitches thrown by each pitcher in a cluster, sorting them by game, then running checks 
+on the events of the game to determine if the definition above is satisfied. In order to prevent any biasing in the 
+analysis based on the clustering, a random sample of 50 such events is taken from the set of 
+clusters identified for each cluster.
+\\ \indent With events identified for each cluster, the time series data of pitch metrics 
+over the course of each pitcher outing approaching the fatigue event must be collected. The metrics chosen 
+to analyze per event are given in the following table:
+\begin{center}
+    \begin{tabular}{||c | l||} 
+     \hline
+     Metric & Description  \\ [0.5ex] 
+     \hline
+     Fastball Velocity & The velocity of any pitch which qualifies as a fastball, including cutters, \\
+     & sinkers, four-seam fastballs, and two-seam fastballs (mph) \\
+     \hline
+     Breaking Ball Velocity & The velocity of any pitch which qualifies as a breaking ball, including \\ 
+     & curves, sliders, and sweepers (mph)\\
+     \hline 
+     Changeup Velocity & The velocity of a changeup (mph)\\
+     \hline 
+     Fastball Spin Rate & The spin rate on any pitch qualifying as a fastball (rpm)\\
+     \hline 
+     Breaking Ball Spin Rate & the spin rate on any pitch qualifying as a breaking ball (rpm)\\ 
+     \hline 
+     Changeup Spin Rate & the spin rate on a changeup (rpm) \\
+     \hline
+     Curve Ball Vertical Break & The total vertical translation of a curveball over the course of its \\
+     & flight in feet \\
+     \hline 
+     Slider Horizontal Break & The total horizontal translation of a slider over the course of its \\
+     & flight in feet \\
+     \hline
+     Release Height & The total height off the ground at which a pitch is released \\
+     \hline
+    \end{tabular}
+    \newline \\ Table 4: Time Series Metric Definitions
+\end{center}
+\indent These metrics were chosen from the pool of avaliable statcast metrics for their 
+likelihood to influenced by fatigue for the following reasons: 
+\begin{itemize}
+    \item Pitch Velocities: Traditionally thought to decrease withn fatigue, though 
+    in the MLB today pitchers tend to pace their own usage to maintain velocity
+    \item Spin Rate: Is highly effected by grip, meaning that forearm fatigue over the 
+    course of the game could reduce spin rate, which is one of the most important
+    features that make a pitch effective.
+    \item Break: Is also a proxy for the combination of velocity and spin rate and is therefore impacted by fatigue for the same reasons as those listed above, and is 
+    what makes breaking pitches effective. 
+    \item Release height: Whiteside et. al showed that this is one of the most impacted 
+    biometrics correlated with pitcher fatigue
+\end{itemize}
+These metrics are scraped from Pybaseball so that for each fatigue event the time series of 
+each metric from the beginning of the pitchers' outing up until the fatigue event is stored.
+\\ \indent Next, a smoothing algorithm is applied to the time series of metrics in order to obtain 
+a sliding average of pitch metrics over the course of the game. This is necessary as pitching metrics 
+show a lot of noise over the course of a game, with very high variability from pitch 
+to pitch. The following exponential smoothing algorithm is applied such that the time series 
+of a certain pitcher's metrics at any given pitch number in an outing represents their mean 
+performance with that pitch and statistic over a sliding window of all previous pitches:
+\[F_{t+1} = \alpha(A_t) + (1-\alpha)F_t\;\;\;(3)\]
+where $A_{t+1}$ is the $t+1$th observation in the series, and $\alpha$ is a decay factor determined by the desired half life of any particular pitch 
+in the time series. The decay factor is set such that the half life $T_{1/2}$ is 8 pitches, so that the 
+cumulative averaging occurs over a sliding window of length equal to an average inning. 
+This way the metric data recorded in the time series represents the pitchers average performance over 
+the course of the previous inning.
+\\ \indent Exponential smoothing is chosen so that more recent observations are weighted more 
+heavily in the course of averaging, in order to attempt to capture the cumulative impact of 
+fatigue. This captures the way that the previous pitch thrown by a pitcher better demonstrates their 
+current level of fatigue than a pitch which was thrown longer ago, so the markers present in that 
+pitches metrics should be weighted more heavily. The results of exponential smoothing 
+are vizualized for a time series below: \\
+\includegraphics[scale = .5]{figs/unsmoothed.png}
+\includegraphics[scale = .5]{figs/smoothed.png}
+\begin{center}
+    Figures 12, 13: Unsmoothed Vs. Smoothed Fastball Spin Rates for Marco Gonzales, 
+    7/3/21
+\end{center}
+\indent Explanatory analysis may now be applied to these time series to understand the relationship 
+between these fatigue proxies and pitching performance, by analyzing relative changes 
+between the time series to understand which metric is most strongly correlated 
+with the ensuing decrease in performance. This makes the reasonable assumption that 
+larger decreases in the metrics selected as fatigue proxies cause larger decreases 
+in pitch efficacy. In order to determine which time series show the largest changes 
+over the course of an a game, first, the delta of each metric is taken over the 
+smoothed time series, such that $\Delta F = F_{event} - F_{0}$, giving the total 
+change in average metrics between the beginning of a pitchers performance and 
+their performance at the time of a fatigue event. Define this delta as the drift of a metric $m$ in an event $e$, $D_{m, e} = \Delta F$
+Since this ompares with the pitcher's
+baseline performance on the day of the game instead of the pitcher's average performance,
+confounding variables such as the stadium, opponent, play condition, etc. are screened 
+out as much as possible.
+\\ \indent In order to compare the deltas of each time series with each other, 
+for a cluster $c$, an average delta of each metric is taken across the set of all events identified for 
+a the cluster $E$: \[\bar{D_{m, c}} = (\sum_{e \in E}D_{m, e}) / |E|\;\;\;(4)\]
+\\ \indent In order to compare metrics to each other, measurement standardization must be applied 
+so that the average drifts are comparable to each other. In order to do so, apply mean 
+standardization so that drifts are defined in terms of standard deviations of each metric $m$, so 
+that each drift $d_{m, c}$ is converted to the average number of standard deviations by which the 
+exponentially smoothed metrics change over the course of a time series approaching a fatigue 
+event: \[d_{m, c} = (\mu_m - \bar{D_{m, c}}) / \sigma_m\;\;\;(5)\]
+\\ \indent Now, time series are comparable in an explanatory sense so that the drifts in each 
+metric relative to each other demonstrate the importance of each fatigue-proxy metric 
+correlated to the occurrence of a fatigue event.\\
+
 
 \textbf{V. Results} \\
-TODO
+\indent The following table presents the drift $d_{m, c}$ for each metric $m$ measured across each cluster $c$ 
+for all events of that cluster. Measurements are standardized in number of standard deviations.
+\begin{center}
+    \begin{tabular}{||c | c | c | c | c | c | c | c | c | c ||} 
+     \hline
+     Cluster & FB & BB & CH & FB & BB & CH & CU Vert.& SL Hor. & Release \\ [0.5ex]
+     & Velocity & Velocity & Velocity & Spin & Spin & Spin & Break & Break & Height \\
+     \hline
+     0&-0.143&0.132&0.028&-0.84&-1.43&-.25&-0.126&-0.386&0.134 \\
+     \hline
+     1&-0.068&-0.229&-0.031&-1.25&-0.019&-0.83&0.05&-0.162&0.017 \\
+     \hline
+     2&-0.213&-0.23&-0.16&-0.71&-0.67&-0.65&-0.016&-0.269&-0.45 \\
+     \hline
+     3&-0.008&-0.136&-0.22&-1.31&-0.97&-0.07&-0.449&-0.283&-0.304 \\
+     \hline
+     4&-.208&-0.095&-0.039&-0.32&-1.57&-0.89&-0.512&0.173&-0.41 \\
+     \hline
+     5&0.079&-0.256&-0.305&-1.83&-0.45&-0.33&-0.368&-0.216&-0.038 \\
+     \hline
+     6&-0.151&-0.269&0.16&-0.56&-0.27&-1.34&0.154&-0.481&-0.043 \\
+     \hline
+     7&0.153&-0.392&-0.378&-1.19&-0.28&-0.37&-0.321&0.127&0.144 \\
+     \hline
+    \end{tabular}
+    \newline \\ Table 5: Time Series Metric Drifts per Cluster
+\end{center}
+\indent It is clear from the above computations that the drift in pitch velocities 
+throughout a game do not present a significant correlation with the occurrence of 
+fatigue events. With velocities presenting drifts of magnitude less than half of 
+a standard deviation from the mean without a clear pattern in relation to the pitch usages 
+of each cluster, there is no evidence here that pitch velocities are a marker of fatigue 
+or that changes in pitch velocity are a typical cause of offensive advantage for the 
+opponent. 
+\\ \indent Similarly, there is no evidence shown here that a pitcher's fatigue presents itself 
+in the form of breaking ball break distances or release heights. Break distances present slightly 
+higher magnitude drifts for those pitcher clusters who utilize their breaking balls a higher percentage 
+of the time (clusters 4 and 6), however the correlation is weak and still the drift is 
+around only a half of a standard deviation from the mean.
+\\ \indent From the computed drits, it is clear that of the metrics studied in this account, 
+spin rates show the clearest correlation to the occurrence of fatigue events, and present a 
+pattern across the clusters. For each cluster, the spin rate of the primary pitch thrown by the 
+cluster (the pitch type thrown with the highest frequency on average across the cluster) presented a drift of -1.33 standard deviations on average, and secondary pitches 
+showed a deviation of .7 deviations on average, both showing significant drift over the course of a pitcher's performance for 
+each cluster. 
+\begin{center}
+    \includegraphics[scale = .7]{figs/SpinDrf.png}
+    Figure 14: Spin Drifts Per Pitch Across Clusters
+\end{center}
+\indent The important distinction in which pitch's spin rate shows the highest drift 
+is a clear indication that the clustering method applied is justified. With primary pitches showing
+the greatest drifts, we have unconvered the relationships between how a pitcher strategically uses their 
+arsenal and the most significant markers of fatigue seen in the performance of a pitcher. Without having applied 
+the clustering, the drift in spin rates would have been the higher static in the 
+group of all pitchers, but the relative amount of drift per pitch would be lower, and the lower drift metrics
+observed in pitchers who throw certain pitches less frequently would have brought down average spin 
+rate deltas, masking the significance of the spin rate drift in correlation with 
+the occurrence of fatigue events.
 
-\textbf{VI. Discussion and Conclusion} \\
-TODO
+\textbf{VI. Discussion and Conclusion} \\\
+\\ \indent The prevalence of spin rate as the predominant indicator of pitcher fatigue runs 
+contrary to expectation, in that declining velocity is typically assumed to be symptomatic of fatigue. While 
+overall the results of this study do show that velocity tended to decrease over the course of a 
+pitching performance, it was by a far less significant extent than the spin rates in those instances 
+where it was identified that fatigue played a role in giving the opposing team an offensive advantage. This significance of 
+spin rate as a fatigue marker has a number of implications for pitcher usage, strategy, and training.
+\\ \indent For teams who play at levels for which statcast data is available, the prevelance of 
+spin rate as a fatigue marker allows a team to monitor the fatigue of their pitcher closely by tracking 
+the spin rate data aquired by the statcast system as the pitcher pitches. The smoothing algorithm aplplied in this 
+paper can be applied in real time to track filtered time series of spin rate data, with the understanding that the higher the spin drift, 
+the greater the likelihood of a fatigue event which deeply impacts the team's chances of winning occur. 
+A focus of future work could be to identify risk thresholds of spin rate drift such that a team could 
+understand the risk they take when leaving in a pitcher whose spin rate has drifted by certain margins.
+Dependent on the game situation including the score and the significance of the game, teams can then make more 
+informed decisions about how willing they are to leave a pitcher in who is showing these specific indicators. 
+\\ \indent In training pitchers to increase their stamina and longevity, it is clear that 
+avoiding negative drift in spin rate should be a major goal. While which biomechanical factors influence spin rate 
+and how to train those is worthy of a future study, it is currently clear that grip strength must play a major role in 
+spin rate, as the force imparted by the fingers on the seams of the baseball is what causes the ball to spin. With this being the case, 
+forearm and grip stamina present themselves as training targets for pitchers seeking to increase 
+their stmaina and resistance to fatigue. In pitching training, for those pitchers who have 
+statcast available in their training facilities, tracking their own filtered time series of spin rate 
+would provide real time feedback during their bullpen sessions as to their current fatigue level.
+\\ \indent Similarly, this result can be used for recruiting starting pitchers. Starting pitcher 
+stamina is a very important target to seek when recruiting strarting pitchers, as starting pitchers who 
+are able to throw more innings effectively allow teams to utilize their bullpen pitchers less frequently 
+and therefore have more pitchers available in strategic situations. When evaluating the performance of starting 
+pitchers for their stamina, the results of this paper can be utilized by tracking the spin rate 
+drift of pitchers when statcast data is available, uncovering potential fatigue markers even when the offensive 
+team does not take advantage of them, helping to provide an opponent-blind method of 
+investigating a potential recruit's stamina.
 
 \pagebreak
 \textbf{VII. References} \\

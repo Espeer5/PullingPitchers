@@ -51,6 +51,9 @@ if __name__ == "__main__":
         #except KeyError:
             #print("Error - restarting")
             #continue
-    deltas = load_deltas()
-    for group in deltas:
-        print(group)
+    #deltas = load_deltas()
+    #for group in deltas:
+        #print(group)
+    event = get_event(from_pick(group=4)[50])
+    print(event)
+    v.plot_game_series(game_stat_series(event, ['FF', 'SI', 'FC'], 'release_spin_rate'))
